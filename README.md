@@ -18,26 +18,38 @@ The first step here is to create the types that are necessary to build the `data
 
 Start by filling out the following types. Remember types can and should reference each other when it makes sense :)
 
-```ts
-export type MassData = {
-  // something
-};
+````ts
+// export type MassData = {
+//   massValue: number;
+//   massExponent: number;
+// };
 
-export type VolData = {
-  // something
-};
+// export type VolData = {
+//   volValue: number;
+//   volExponent: number;
+// };
 
-export type Planet = {
-  // something
-};
+// export type Planet = {
+//   id: string;
+//   name: string;
+//   isPlanet: bool;
+//   mass: massData;
+//   vol: volData;
+//   gravity: number;
+//   avgTemp: string;
+//   moonsCount: number;
+//   moons: string[];
+// };
 
-export type Asteroid = {
-  // something
-};
+// export type Asteroid = {
+//   name: string;
+//   discoveryYear: number;
+//   ortbitalPeriod: number;
+// };
 
-export type AllData = {
-  // something
-};
+// export type AllData = {
+//   // something
+// };
 ```
 
 ### Getting through the tests
@@ -54,3 +66,4 @@ If you would like to check whether or not your types are all passing you can run
 ### DO NOT USE ANY!!!!
 
 If there is a spot where you think you may need the flexibility of any, use a generic, or an unknown instead.
+````

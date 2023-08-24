@@ -1,8 +1,13 @@
 // SPACE DATA EXERCISE 13
 // Return the average temperature of all the Planets
 // Return example: 132.53
-
-export function getAveragePlanetsTemperature(data) {}
+import { sumArray } from "./functions";
+import { AllData } from "../data/data";
+export function getAveragePlanetsTemperature(data: AllData) {
+  return (
+    sumArray(data.planets.map((planet) => planet.avgTemp)) / data.planets.length
+  );
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"
