@@ -1,9 +1,9 @@
-export function minBy<T>(array: T[], cb: (arg: T) => number) {
+export function minBy<T>(array: T[], cb: (arg: T) => number | string) {
   array.sort((a, b) => (cb(b) > cb(a) ? -1 : 1));
   return array[0];
 }
 
-export function maxBy<T>(array: T[], cb: (arg: T) => number) {
+export function maxBy<T>(array: T[], cb: (arg: T) => number | string) {
   array.sort((a, b) => (cb(b) < cb(a) ? -1 : 1));
   return array[0];
 }

@@ -16,7 +16,7 @@ export type Planet = {
   vol: VolData;
   gravity: number;
   avgTemp: number;
-  moonsCount: number;
+  moonsCount?: number;
   moons?: string[];
 };
 

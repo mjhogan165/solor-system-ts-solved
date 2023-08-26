@@ -1,14 +1,16 @@
-import { data } from "../data/data";
+import { AllData, data } from "../data/data";
 
 // SPACE DATA SAMPLE EXERCISE 0
 // Return the name of the first Planet in the array
 // Return example: 'Planet Name'
 
-export function getFirstPlanetName(data) {
+export function getFirstPlanetName(data: AllData) {
   // Your code goes here...
   const planets = data.planets;
   //console.log(planets);
-  return planets[0].name;
+  if (planets[0]) {
+    return planets[0].name;
+  }
 }
 
 // === TEST YOURSELF ===
