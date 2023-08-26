@@ -4,7 +4,7 @@
 import { sumArray } from "./functions";
 import { Asteroid } from "../data/data";
 export function getOrbitalPeriodsSum(asteroids: Asteroid[]) {
-  return sumArray(asteroids.map((asteroid) => asteroid.ortbitalPeriod));
+  return sumArray(asteroids.map((asteroid) => asteroid.orbitalPeriod));
 }
 
 // === TEST YOURSELF ===

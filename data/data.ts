@@ -23,7 +23,7 @@ export type Planet = {
 export type Asteroid = {
   name: string;
   discoveryYear: number;
-  ortbitalPeriod: number;
+  orbitalPeriod: number;
 };
 
 export type AllData = {
