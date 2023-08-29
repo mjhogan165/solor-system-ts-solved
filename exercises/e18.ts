@@ -3,40 +3,24 @@
 // Return example: 1902
 // Hint: use a Map data structure instead of an object if you want typescript to be
 import { Asteroid } from "../data/data";
+import { maxBy } from "./e17";
 export function getGreatestDiscoveryYear(asteroids: Asteroid[]) {
-  const allYears = [];
-  let compare = 0;
-  let mostFrequent: number = 0;
-  for (let index = 0; index < asteroids.length; index++) {
-    const asteroid = asteroids[index];
-    let year;
-    if (asteroid) {
-      year = asteroid.discoveryYear;
-      allYears.push({ year: year, count: 0 });
+  const countObj: { [key: string]: number } = {};
+  for (const asteroid of asteroids) {
+    const year = asteroid.discoveryYear.toString();
+    if (countObj[year] === undefined) {
+      countObj[year] = 1;
+    } else {
+      countObj[year]++;
     }
   }
-  for (let index = 0; index < asteroids.length; index++) {
-    const asteroid = asteroids[index];
-    for (let j = 0; j < allYears.length; j++) {
-      const currentYear = allYears[j];
-      if (currentYear) {
-        if (currentYear.year === asteroid?.discoveryYear) {
-          currentYear.count += 1;
-        }
-      }
-    }
+  const countPairs = Object.entries(countObj);
+  const max = maxBy(countPairs, (item) => {
+    return item[1];
+  });
+  if (max) {
+    return +max[0];
   }
-
-  for (let index = 0; index < allYears.length; index++) {
-    const year = allYears[index];
-    if (year) {
-      if (year.count > compare) {
-        compare = year.count;
-        mostFrequent = year.year;
-      }
-    }
-  }
-  return mostFrequent;
 }
 
 // === TEST YOURSELF ===
